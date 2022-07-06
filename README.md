@@ -1,7 +1,7 @@
 ##  usersテーブル
 | Column | Type | Options |
 | ------ | ---- | ------- |
-| nickname | string | null: false,unique: true |
+| nickname | string | null: false |
 | email | string | null: false,unique: true |
 | encrypted_password | string | null: false |
 | last_name | string | null: false |
@@ -13,7 +13,6 @@
 ### Association
 - has_many :products
 - has_many :orders
-- has_many :comments
 
 
 ##  products テーブル
@@ -31,7 +30,6 @@
 
 ### Association
 - belongs_to :user
-- has_many :comments
 - has_one :order
 
 
@@ -61,14 +59,3 @@
 - belongs_to :product
 - has_one :payment
 
-
-##  comments テーブル
-| Column | Type | Options |
-| ------ | ---- | ------- |
-| comment | text | null: false |
-| product | references | null: false, foreign_key: true |
-| user | references | null: false, foreign_key: true |
-
-### Association
-- belongs_to :user
-- belongs_to :product
