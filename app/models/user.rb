@@ -1,6 +1,6 @@
 class User < ApplicationRecord
 
-  validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i }
+  validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i, message: 'Include both letters and numbers'}
 
   validates :nickname, presence: true
   validates :last_name, format: { with: /\A([ぁ-ゔァ-ヴ一-龥々]|ー)+\z/ }, presence: true
