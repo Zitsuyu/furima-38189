@@ -9,7 +9,7 @@ class User < ApplicationRecord
   validates :first_name_kana, format: { with: /\A[ァ-ヶー]+\z/ }, presence: true
   validates :birthday, presence: true
  
-  # has_many :items
+  has_many :items
   # has_many :orders
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
