@@ -8,6 +8,7 @@ FactoryBot.define do
     prefecture_id     { '2' }
     shipping_date_id  { '2' }
     price             { '1000' }
+    image             { Rack::Test::UploadedFile.new('app/assets/images/test.png') }
 
     association :user
   end
