@@ -8,7 +8,7 @@ class OrderForm
   validates :token, presence: true
 
   validates :postcode, presence: true
-  validates :prefecture_id, presence: true, { other_than: 1, message: "can't be blank" }
+  validates :prefecture_id, presence: true
   validates :city, presence: true
   validates :block, presence: true
   validates :building, presence: true
