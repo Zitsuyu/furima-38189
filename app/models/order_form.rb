@@ -7,11 +7,11 @@ class OrderForm
   validates :item_id, presence: true
   validates :token, presence: true
 
-  validates :postcode, presence: true
-  validates :prefecture_id, presence: true
+  validates :postcode, presence: true, format: { with: /\A[0-9]{3}-[0-9]{4}\z/ }
+  validates :prefecture_id, presence: true, numericality: { other_than: 1, message: "can't be blank"}
   validates :city, presence: true
   validates :block, presence: true
-  validates :phone_number, presence: true
+  validates :phone_number, presence: true, format: { with: /\A[0-9]{11}\z/ }
 
   def save
     order = Order.create(user_id: user_id, item_id: item_id)
