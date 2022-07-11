@@ -1,6 +1,6 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!
-  before_action :order_reject
+  before_action :order_reject, only: [:index, :create]
 
   def index
     @order_form = OrderForm.new
